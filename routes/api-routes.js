@@ -1,6 +1,8 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
+var Sequelize = require('sequelize');
+
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -19,6 +21,7 @@ module.exports = function(app) {
   app.post("/api/signup", function(req, res) {
     console.log(req.body);
     db.User.create({
+      name :req.body.name,
       email: req.body.email,
       password: req.body.password
     }).then(function() {
@@ -49,5 +52,83 @@ module.exports = function(app) {
       });
     }
   });
+
+  
+  // GET route for getting all of the events
+  app.get("/api/events" , function(req, res){
+    // findAll returns all entries for a table when used with no options
+    db.Event.findAll({
+    }).then(function(events) {
+       // We have access to the events as an argument inside of the callback function
+        res.json(events);
+    });
+  })
+
+
+app.get("/api/events/:id" , function(req, res){
+    // findAll returns all entries for a table when used with no options
+    console.log(req.body);
+    db.Event.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(event) {
+       // We have access to the events as an argument inside of the callback function
+        res.json(event);
+    });
+  })
+
+
+
+// POST route for saving a new event
+  app.post("/api/events", function(req, res) {
+    console.log(req.body);
+    // create takes an argument of an object describing the item we want to
+    // insert into our table. In this case we just we pass in an object with a name, descripton 
+    // and date property (req.body)
+    db.Event.create({
+      name: req.body.name,
+      description: req.body.description,
+      date: req.body. date,
+      type: req.body.type
+    }).then(function(event) {
+      // We have access to the new event as an argument inside of the callback function
+      res.json(event);
+    }).catch(Sequelize.ValidationError, function (err) {
+      console.log("Failed to create event "  +err);
+    });
+
+  })
+// PUT route for updating event. We can get the updated event data from req.body
+  app.put("/api/events/:id", function(req, res) {
+    // Update takes in an object describing the properties we want to update, and
+    // we use where to describe which objects we want to update
+    db.Event.update({
+      name: req.body.name,
+      description: req.body.description,
+      date: req.body. date
+    }, {
+      where: {
+        id: req.params.id
+      }
+    }).then(function(events) {
+      res.json(events);
+    });
+  });
+// DELETE route for deleting event. We can get the id of the event to be deleted from
+  // req.params.id
+  app.delete("/api/events/:id", function(req, res) {
+    // We just have to specify which event we want to destroy with "where"
+    db.Event.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(events) {
+      res.json(events);
+    });
+
+  });
+
+
 
 };
