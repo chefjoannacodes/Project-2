@@ -1,0 +1,9 @@
+<div class="list-group">
+<a href="#" class="list-group-item list-group-item-success">
+Event Attendees
+</a>
+{{#each rows}}
+ 	<div><b>{{user.name}}</b><span class="pull-right">{{status}}</span></div>
+  	<div class="col-md-2">&nbsp;</div><div>{{comments}}</div>
+ {{/each}}
+</div>

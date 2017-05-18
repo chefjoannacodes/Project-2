@@ -8,53 +8,71 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
 
   app.get("/", function(req, res) {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/members");
-    }
-    res.sendFile(path.join(__dirname + "/../public/signup.html"));
+      res.render('about', {})
   });
 
   app.get("/login", function(req, res) {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/members");
-    }
-    res.sendFile(path.join(__dirname + "/../public/login.html"));
-  });
 
-  // Here we've add our isAuthenticated middleware to this route.
-  // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/members", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/members.html"));
+
+      var landingPage = req.query.landingPage;
+
+      if(! landingPage) {
+          landingPage = "/members"
+      }
+      res.render('login', {'landingPage':landingPage})
   });
 
 
+    app.get("/signup", function(req, res) {
+        res.render('signup', {})
+    });
 
-  function formatDate(date) {
-     var result = date.getFullYear() + '-' + 
-            (date.getMonth() < 9 ? '0' : '') + 
-            (date.getMonth() + 1) + '-' + date.getDate();
-    return result;
-  }
+  // // Here we've add our isAuthenticated middleware to this route.
+  // // If a user who is not logged in tries to access this route they will be redirected to the signup page
+  // app.get("/members", isAuthenticated, function(req, res) {
+  //   res.sendFile(path.join(__dirname + "/../public/members.html"));
+  // });
+  //
+
+
+
+
+
+
+
+
+
 
   app.get("/events", function(req, res) {
-    db.Event.findAll({}).then(function(records) {
-           
-           records = records.map(function(record){
-              return {
-                  id:record.id,
-                  name:record.name,
-                  description:record.description,
-                  date:formatDate(record.date),
-                  type:record.type
-              };
-           })
+    //if user is not login first redirect to login page
+    if (!req.user) {
+      res.redirect("/login?landingPage=/events");
+      return;
+    }
 
-           res.render('events', {
-              'events': records
+    var data;
+    db.Event.findAll({
+       include: [
+            { model: db.EventAttendee, as: 'Attendees', include: [{model: db.User, as: 'User'}]}
+       ],
+        order: [
+            // Will escape username and validate DESC against a list of valid direction parameters
+            ['date', 'DESC']
+        ],
+        limit: 10 //return only no more then most recent events.
+    }).then(function(records) {
+         //tranform data from database to only filed needed by web page template
+          data = records.map(function(record){
+             var attendees = record.Attendees.map(function(attendee){
+                 return attendee.mapAttendee();
+             });
+             return record.mapEvent(req.user, attendees)
+           });
+
+    }).done(function() {
+      res.render('events', {
+          'events': data
             })
-
     })
  
   });
