@@ -10,6 +10,10 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
       res.render('about', {})
   });
+  //add books route
+  app.get("/books",function( req,res) {
+    res.render('books',{})
+  });
 
   app.get("/login", function(req, res) {
 
@@ -33,15 +37,6 @@ module.exports = function(app) {
   //   res.sendFile(path.join(__dirname + "/../public/members.html"));
   // });
   //
-
-
-
-
-
-
-
-
-
 
   app.get("/events", function(req, res) {
     //if user is not login first redirect to login page
