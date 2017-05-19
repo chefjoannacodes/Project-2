@@ -1,22 +1,22 @@
 {
   "development": {
     "username": "root",
-    "password": "dev",
-    "database": "bookpub",
+    "password": "",
+    "database": "Book Pub",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-   "password": "dev",
-    "database": "database_test",
+   "password": "",
+    "database": "",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-   "password": "dev",
-    "database": "database_production",
+   "password": "",
+    "database": "",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }

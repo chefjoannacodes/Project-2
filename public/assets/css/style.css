@@ -1,0 +1,25 @@
+.d-flex {
+	display: flex;
+}
+
+.flex-1 {
+	flex: 1
+}
+
+.editable {
+	margin: 1px;
+	border: 1px solid lightgray;	
+}
+
+.active {
+	border: 2px solid black;
+}
+
+
+.content-space-around{
+justify-content: space-around;
+}
+
+.hidden {
+	display: none;
+}

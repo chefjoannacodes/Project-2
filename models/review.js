@@ -12,16 +12,16 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       len: [1]
     }
-  }
-    configuration: {
-      associate: function(models) {
-        Review.belongsTo(models.user, {
-          foreignKey:{
-            allowNull: false
-          }
-        });
-      }
     }
+    // configuration, {
+    //   associate: function(models) {
+    //     Review.belongsTo(models.user, {
+    //       foreignKey:{
+    //         allowNull: false
+    //       }
+    //     });
+    //   }
+    // }
   // Add another "configuration" obect as an argument to set up an association to Authors
   // Example: http://docs.sequelizejs.com/en/1.7.0/articles/express/#modelstaskjs
   );
