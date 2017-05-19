@@ -37,17 +37,17 @@
             </div>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active" role="presentation"><a href="/">Home </a></li>
-                    <li role="presentation"><a href="/books">Books</a></li>
-                    <li role="presentation"><a href="/pub">Pub </a></li>
-                    <li role="presentation"><a href="/events">Events </a></li>
+                    <li {{#home}}class="active"{{/home}} role="presentation"><a href="/">Home </a></li>
+                    <li {{#books}}class="active"{{/books}} role="presentation"><a href="/books">Books</a></li>
+                    <li {{#pub}}class="active"{{/pub}}  role="presentation"><a href="/pub">Pub </a></li>
+                    <li {{#events}}class="active"{{/events}}   role="presentation"><a href="/events">Events </a></li>
 					{{#user}}
-				   	<li><a href="/profile">Profile</a></li>
+				   	<li {{#profile}}class="active"{{/profile}} role="presentation"><a href="/profile">Profile</a></li>
 					{{/user}}
 					{{^user}}
-				  	 <li><a href="/login">Login</a></li>
+				  	 <li {{#login}}class="active"{{/login}} role="presentation"><a href="/login">Login</a></li>
 					{{/user}}
-				   <li><a href="/contact">Contact</a></li>
+				   <li  {{#contact}}class="active"{{/contact}} role="presentation"><a href="/contact">Contact</a></li>
                 </ul>
             </div>
         </div>

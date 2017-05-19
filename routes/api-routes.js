@@ -17,7 +17,7 @@ module.exports = function (app) {
         console.log(req.params);
         var landingPage = req.body.landingPage;
         if (!landingPage) {
-            landingPage = "/members"
+            landingPage = "/profile"
         }
 
         res.json(landingPage);
