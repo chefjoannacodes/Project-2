@@ -13,6 +13,13 @@ module.exports = function(app) {
       res.render('index', {user:req.user, home:true})
   });
 
+
+  app.get('/logout', function(req, res){
+      req.logout();
+      res.redirect('/');
+  });
+
+
   app.get("/contact", function(req, res) {
       //contact needs to be present for menu to be highlighted
       //user presence will drive either profile or login menu option
