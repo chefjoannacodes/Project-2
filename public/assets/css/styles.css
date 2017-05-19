@@ -68,6 +68,9 @@ h2, .h2 {
   color:#2b2b28;
   font-weight:bolder;
 }
+.books-container {
+  background-color: white;
+}
 
 .jumbotron p {
   color:#444f51;
@@ -353,5 +356,22 @@ div.social-links {
   margin-right:5px;
   margin-bottom:5px;
 }
-
-
+/*Books API*/
+h1.clearmargin.clearpadding{
+  color: black;
+}
+.books {
+  color: black;
+}
+.list-group-item{
+  background-color: white;
+}
+/*Contact form*/
+.form-contact{
+  max-width: 1080px;
+}
+#rose{
+  float: left;
+  padding-bottom: 5px;
+  padding-right: 5px;
+}
