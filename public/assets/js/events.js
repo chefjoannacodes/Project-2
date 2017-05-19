@@ -2,6 +2,12 @@
 
 var attendesTemplate;
 
+//load handlebars template to be process on client side
+$.get('/assets/template/event-attendees.handlebars', function(source) {
+    attendesTemplate = Handlebars.compile(source);
+});
+
+
 
 function renderAttendees(data) {
     var rows = data.attendees;
@@ -13,12 +19,6 @@ function renderAttendees(data) {
     $('#event-detail').empty();
     $('#event-detail').append(html);
 }
-
-
-//load handlebars template to be process on client side
-$.get('/assets/template/event-attendees.handlebars', function(source) {
-    attendesTemplate = Handlebars.compile(source);
-});
 
 
 //match all events to add click event handler
@@ -59,7 +59,7 @@ attendStatusButton.click(function() {
   		data: {
   			user_id:userId,
   			status:status,
-  			comments: $('#comments').text()
+  			comments: $('#comments-' + eventId).text()
   		},
 	  	success: function(data) {
   			renderAttendees(data);
@@ -96,8 +96,7 @@ var submitEvent = $('#submitEvent');
 
 submitEvent.click(function() {
 
-	console.log('posting ?');
-
+	
 
     var name = $('#name').val().trim();
     updateValidationStatus($('#name'));

@@ -63,7 +63,7 @@ module.exports = function(sequelize, DataTypes) {
         //assign login user to attendee
         var attendee = {};
         for(var i = 0; i < attendees.length;i++) {
-            if(attendees[i].user_id = user.id) {
+            if(attendees[i].user_id == user.id) {
                 attendee = attendees[i];
             }
         }
