@@ -59,7 +59,7 @@ attendStatusButton.click(function() {
   		data: {
   			user_id:userId,
   			status:status,
-  			comments: $('#comments').text()
+  			comments: $('#comments-' + eventId).text()
   		},
 	  	success: function(data) {
   			renderAttendees(data);
@@ -96,8 +96,7 @@ var submitEvent = $('#submitEvent');
 
 submitEvent.click(function() {
 
-	console.log('posting ?');
-
+	
 
     var name = $('#name').val().trim();
     updateValidationStatus($('#name'));
