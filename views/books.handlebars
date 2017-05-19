@@ -12,12 +12,13 @@
         <div class="row">
         <form class="search-form">
             <div class="input-group">
-                <div class="input-group-addon"><span><i class="glyphicon glyphicon-search"></i></span></div>
+            <span><i class="input-group-addon glyphicon glyphicon-search"></i></span>
+                
                 <input class="form-control" type="text" placeholder="I am looking for..">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="button" id="search" id="clear-all">Clear All</button>
-                    <button class="btn btn-default" type="button">Search </button>
-                </div>
+                {{!-- <div class="input-group-btn"> --}}
+                    <span class="input-group-addon btn btn-default" type="button" id="search" id="clear-all">Clear All</span>
+                    <span class="input-group-addon btn btn-default" type="button">Search</span>
+                {{!-- </div> --}}
             </div>
         </form>
         </div>
