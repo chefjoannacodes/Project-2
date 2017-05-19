@@ -48,7 +48,7 @@ module.exports = function(app) {
       var landingPage = req.query.landingPage;
 
       if(! landingPage) {
-          landingPage = "/members"
+          landingPage = "/profile"
       }
      //login needs to be present for menu to be highlighted
      //user presence will drive either profile or login menu option
