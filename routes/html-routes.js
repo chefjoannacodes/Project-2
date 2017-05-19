@@ -8,27 +8,39 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
 
   app.get("/", function(req, res) {
-      res.render('about', {})
+      res.render('index', {user:req.user})
   });
+
+  app.get("/contact", function(req, res) {
+      res.render('contact', {user:req.user})
+  });
+
+  app.get("/pub", function(req, res) {
+      res.render('pub', {user:req.user})
+  });
+
+  app.get("/profile",function( req,res) {
+    res.render('profile',{user:req.user})
+  });
+
+
   //add books route
   app.get("/books",function( req,res) {
-    res.render('books',{})
+    res.render('books',{user:req.user})
   });
 
   app.get("/login", function(req, res) {
-
-
       var landingPage = req.query.landingPage;
 
       if(! landingPage) {
           landingPage = "/members"
       }
-      res.render('login', {'landingPage':landingPage})
+      res.render('login', {'landingPage':landingPage, user:req.user})
   });
 
 
     app.get("/signup", function(req, res) {
-        res.render('signup', {})
+        res.render('signup', {user:req.user})
     });
 
   // // Here we've add our isAuthenticated middleware to this route.
@@ -66,7 +78,7 @@ module.exports = function(app) {
 
     }).done(function() {
       res.render('events', {
-          'events': data
+          'events': data, user:req.user
             })
     })
  
