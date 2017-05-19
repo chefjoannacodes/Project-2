@@ -29,7 +29,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-default">
+{{!-- <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -41,7 +41,25 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-</nav>
+</nav> --}}
+
+<nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand navbar-link" href="#"><img src="assets/img/bookstack_new.png" id="logo">Rose City Book Pub</a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active" role="presentation"><a href="/about">About </a></li>
+                    <li role="presentation"><a href="/books">Books</a></li>
+                    <li role="presentation"><a href="/pub">Pub </a></li>
+                    <li role="presentation"><a href="/events">Events </a></li>
+                    <li role="presentation"><a href="/profile">Log In</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 
     {{{body}}}
@@ -74,6 +92,8 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 
 </html>
