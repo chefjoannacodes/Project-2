@@ -2,6 +2,12 @@
 
 var attendesTemplate;
 
+//load handlebars template to be process on client side
+$.get('/assets/template/event-attendees.handlebars', function(source) {
+    attendesTemplate = Handlebars.compile(source);
+});
+
+
 
 function renderAttendees(data) {
     var rows = data.attendees;
@@ -13,12 +19,6 @@ function renderAttendees(data) {
     $('#event-detail').empty();
     $('#event-detail').append(html);
 }
-
-
-//load handlebars template to be process on client side
-$.get('/assets/template/event-attendees.handlebars', function(source) {
-    attendesTemplate = Handlebars.compile(source);
-});
 
 
 //match all events to add click event handler
