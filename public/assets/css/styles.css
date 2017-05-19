@@ -1,0 +1,186 @@
+#promo {
+  text-align:center;
+  padding:40px;
+  background-image:url(../../assets/img/Electric-House-tatler-16mar15_pr_b_810x540.jpg);
+  background-size:cover;
+}
+
+#promo .jumbotron {
+  border-radius:20px;
+  padding:40px;
+  background-color:rgba(255,255,255,0.75);
+  max-width:800px;
+  margin:0 auto;
+}
+
+@media (max-width:991px) {
+  #promo .jumbotron {
+    padding:20px;
+  }
+}
+
+@media (max-width:991px) {
+  #promo {
+    padding:20px;
+  }
+}
+
+#site-section about {
+  text-align:center;
+  font-size:50px;
+  color:black;
+}
+
+.site-section {
+  max-width:800px;
+  text-align:center;
+  padding:50px 0 60px;
+}
+
+#welcome {
+  max-width:800px;
+}
+
+.site-section h1 {
+  font-weight:normal;
+  margin-bottom:25px;
+  font-size:36px;
+  padding-bottom:0px;
+}
+
+.row.about-container {
+  max-width:800px;
+}
+
+#why {
+  background-color:#000000;
+  padding:30px;
+  border-radius:15px;
+  opacity:.9;
+}
+
+h2, .h2 {
+  font-size:28px;
+  color:gray;
+}
+
+.jumbotron h1, .jumbotron h2, .jumbotron h3, .jumbotron h4, .jumbotron h5, .jumbotron h6 {
+  color:#2b2b28;
+  font-weight:bolder;
+}
+
+.jumbotron p {
+  color:#444f51;
+}
+
+img {
+  /*background-image:url(../../assets/img/rose.jpeg);*/
+}
+
+#promo {
+  margin-top:65px;
+}
+
+#logo {
+  max-height:36px;
+  margin-top:-3px;
+  margin-right:10px;
+  display:inline-block;
+}
+
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+}
+
+#about-pic {
+  max-height:250px;
+}
+
+p {
+  margin:0 0 10px;
+}
+
+.description {
+  font-size:18px;
+}
+
+.about #site-section {
+}
+
+.about #site-section {
+  /*font-size:22px;*/
+}
+
+#about {
+  font-size:42px;
+  color:rgba(255,255,255,0.74902);
+}
+
+#item {
+  font-size:43px;
+  margin-top:13px;
+  color:#760318;
+}
+
+#item2 {
+  font-size:42px;
+  margin-top:13px;
+  color:#760318;
+}
+
+#item3 {
+  font-size:43px;
+  margin-top:13px;
+  color:#760318;
+}
+
+#services {
+  background-color:#f4e1e1;
+  border-radius:10px;
+  margin-bottom:32px;
+}
+
+h1, .h1 {
+}
+
+.service-heading {
+  color:gray;
+  margin-bottom:2px;
+  font-size:18px;
+  /*font-family:Comic Sans, \;*/
+}
+
+.service-p {
+  margin:2px 2px 15px 5px;
+}
+
+.glyphicon {
+  position:relative;
+  top:1px;
+  display:inline-block;
+  font-family:'Glyphicons Halflings';
+  font-style:normal;
+  font-weight:normal;
+  line-height:1;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  margin-top:36px;
+  color:#760318;
+}
+
+#item2 {
+  color:#760318;
+  margin-top:13px;
+}
+
+.btn-default:active:hover, .btn-default.active:hover, .open > .dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open > .dropdown-toggle.btn-default:focus, .btn-default:active.focus, .btn-default.active.focus, .open > .dropdown-toggle.btn-default.focus {
+  color:#ffffff;
+  background-color:#ecfff0;
+  border-color:#2b2b28;
+}
+
+.btn-default {
+  color:#ffffff;
+  background-color:#424242;
+  border-color:#424242;
+}
+

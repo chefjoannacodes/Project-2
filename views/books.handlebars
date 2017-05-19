@@ -1,14 +1,23 @@
-    <div>
-        <form class="main-search">
-            <div class="form-group">
-                <input type="text" id="search" placeholder="Type something. . ." autocomplete="off" class="form-control" />
-            </div>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchResults" id="submit-btn">Search</button>
-            <!-- <div id="viewerCanvas" style="width: 600px; height: 500px"></div> -->
-            <div id="content"> Title: </div>
-            <div id="authors" > Authors: </div>
-        </form>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
-    <script src="/assets/js/books-api.js"></script>
+<div>
+
+<h1>My Book List</h1>
+    <div class="container">
+        <div class="form-group">
+            <input type="text" id="search" placeholder="Search books . . ." autocomplete="off" class="form-control" />
+        </div>
+       
+        <button type="button" class="btn btn-default" id="clear-all"><i class="fa fa-trash"></i> Clear Results</button> 
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchResults" id="submit-btn">Search</button>
+       {{!-- <form class="main-search">
+           <div class="form-group">
+               <input type="text" id="search" placeholder="Type something. . ." autocomplete="off" class="form-control" />
+           </div>
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchResults" id="submit-btn">Search</button>
+           <!-- <div id="viewerCanvas" style="width: 600px; height: 500px"></div> -->
+           <div id="content"> Title: </div>
+           <div id="authors" > Authors: </div>
+       </form> --}}
+   </div>
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+   <script src="/assets/js/books-api.js"></script>
