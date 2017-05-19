@@ -8,34 +8,52 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
 
   app.get("/", function(req, res) {
-      res.render('index', {user:req.user})
+      //home needs to be present for menu to be highlighted
+      //user presence will drive either profile or login menu option
+      res.render('index', {user:req.user, home:true})
   });
 
   app.get("/contact", function(req, res) {
-      res.render('contact', {user:req.user})
+      //contact needs to be present for menu to be highlighted
+      //user presence will drive either profile or login menu option
+
+      res.render('contact', {user:req.user, contact:true})
   });
 
   app.get("/pub", function(req, res) {
-      res.render('pub', {user:req.user})
+    //pub needs to be present for menu to be highlighted
+    //user presence will drive either profile or login menu option
+
+      res.render('pub', {user:req.user, pub:true})
   });
 
   app.get("/profile",function( req,res) {
-    res.render('profile',{user:req.user})
+     //profile needs to be present for menu to be highlighted
+    //user presence will drive either profile or login menu option
+   
+    res.render('profile',{user:req.user, profile:true})
   });
 
 
   //add books route
   app.get("/books",function( req,res) {
-    res.render('books',{user:req.user})
+    //books needs to be present for menu to be highlighted
+    //user presence will drive either profile or login menu option
+
+    res.render('books',{user:req.user, books:true})
   });
 
   app.get("/login", function(req, res) {
+
       var landingPage = req.query.landingPage;
 
       if(! landingPage) {
           landingPage = "/members"
       }
-      res.render('login', {'landingPage':landingPage, user:req.user})
+     //login needs to be present for menu to be highlighted
+     //user presence will drive either profile or login menu option
+
+      res.render('login', {'landingPage':landingPage, user:req.user, login:true})
   });
 
 
