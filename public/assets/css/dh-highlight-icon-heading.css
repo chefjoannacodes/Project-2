@@ -1,0 +1,30 @@
+.clearmargin {
+  margin:0px;
+  font-size:44px;
+}
+
+.clearpadding {
+  padding:0px;
+}
+
+.dh-highlight-text {
+  text-align:center;
+  padding:5px;
+}
+
+.input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child > .btn, .input-group-btn:first-child > .btn-group > .btn, .input-group-btn:first-child > .dropdown-toggle, .input-group-btn:last-child > .btn-group:not(:last-child) > .btn, .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
+  background-color:#236603;
+}
+
+.row.books {
+  max-width:1170px;
+  margin-left:25px;
+  margin-right:25px;
+  background-color:rgba(249,231,249,0.21);
+}
+
+.col-md-3.booklist {
+  background-color:#eee;
+  border-radius:10px;
+}
+

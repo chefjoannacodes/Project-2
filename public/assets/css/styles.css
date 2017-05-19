@@ -210,6 +210,19 @@ justify-content: space-around;
 .hidden {
   display: none;
 }
+.books p  {
+  margin:10px 0 10px;
+  font-size:16px;
+}
+
+.books .h1, h1 {
+  font-size:27px;
+  text-align:center;
+}
+.clearmargin clearpadding {
+  font-size: 27px;
+  text-align: center;
+}
 
 body {
   display:flex;
