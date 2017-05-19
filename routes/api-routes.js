@@ -45,6 +45,9 @@ module.exports = function (app) {
         res.redirect("/");
     });
 
+app.get("/books", function (req, res) {
+        console.log("we are in books");
+    });
     // Route for getting some data about our user to be used client side
     app.get("/api/user_data", function (req, res) {
         if (!req.user) {
