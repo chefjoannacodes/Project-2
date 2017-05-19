@@ -184,3 +184,43 @@ h1, .h1 {
   border-color:#424242;
 }
 
+
+.d-flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1
+}
+
+.editable {
+  margin: 1px;
+  border: 1px solid lightgray;  
+}
+
+.active {
+  border: 2px solid black;
+}
+
+
+.content-space-around{
+justify-content: space-around;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  display:flex;
+  flex-direction: column;
+  height:100vh;
+}
+
+main {
+  flex:1;
+}
+
+footer {
+  min-height: 5em;
+}
