@@ -365,9 +365,11 @@ h1.clearmargin.clearpadding{
 .books {
   color: black;
 }
+
 .list-group-item{
-  background-color: white;
+  background-color:grey;
 }
+
 .input-group .form-control:first-child{
   background-color: white;
   border-right: 1px solid #b6c3cd;
