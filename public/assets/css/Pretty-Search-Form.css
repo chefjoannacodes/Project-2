@@ -19,8 +19,8 @@
   color:#4E565C;
   outline:none;
   border:1px solid #b6c3cd;
-  border-right:0;
-  border-left:0;
+  border-right:1px;
+  border-left:1px;
 }
 
 .search-form div.input-group-btn button {

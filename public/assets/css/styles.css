@@ -366,9 +366,35 @@ h1.clearmargin.clearpadding{
 .list-group-item{
   background-color: white;
 }
+.input-group .form-control:first-child{
+  background-color: white;
+  border-right: 1px solid #b6c3cd;
+  border-left: 1px solid #b6c3cd;
+  border-radius: 2px;
+}
+div.input-group{
+  display: inline-block;
+}
+.col-md-3 .booklist {
+  position: relative;
+  overflow: auto;
+}
+.container .books{
+  padding-top: 20px;
+  padding-bottom: 60px;
+
+}
+.buttons-search {
+  max-width: 500px;
+  margin: 0 auto;
+}
+#search.form-control{
+  max-width: 500px;
+  margin: 0 auto;
+}
 /*Contact form*/
 .form-contact{
-  max-width: 1080px;
+  max-width: 800px;
 }
 #rose{
   float: left;

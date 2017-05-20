@@ -9,22 +9,17 @@
                 <p>Find books you want to read and click on the title to add them to your List</p>
             </div>
         </div>
-        <div class="row">
-        <form class="search-form">
-            <div class="input-group">
-            <span><i class="input-group-addon glyphicon glyphicon-search"></i></span>
-                
-                <input class="form-control" type="text" placeholder="I am looking for..">
-                {{!-- <div class="input-group-btn"> --}}
-                    <span class="input-group-addon btn btn-default" type="button" id="search" id="clear-all">Clear All</span>
-                    <span class="input-group-addon btn btn-default" type="button">Search</span>
-                {{!-- </div> --}}
-            </div>
-        </form>
+        
+        <div class="container books">
+        <div class="form-group">
+            <input type="text" id="search" placeholder="Search books . . ." autocomplete="off" class="form-control" />
         </div>
-    </div>
+       <div class="buttons-search">
+       
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchResults" id="submit-btn">Search</button> <button type="button" class="btn btn-default" id="clear-all"><i class="fa fa-trash"></i> Clear All</button> 
+    </div></div>
     <div class="row books">
-        <div class="col-md-3 booklist">
+        <div class="col-md-3 col-sm-3 col-lg-3 col-xl-3 booklist">
             <h1 class="books">My Book List</h1>
             <ul class="list-group">
                 <li class="list-group-item"><span>Pride and Prejudice</span></li>
@@ -32,7 +27,7 @@
                 <li class="list-group-item"><span>Catcher in the Rye</span></li>
             </ul>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9 col-sm-9">
             <h1 class="books">Results </h1></div>
     </div>
 
