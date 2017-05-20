@@ -1,13 +1,44 @@
+<div class="books-container">
 <div>
 
-<h1>My Book List</h1>
+<div class="container">
+        <div class="dh-highlight-text">
+            <div class="container">
+                <h1><i class="glyphicon glyphicon-book" style="color:#950a2b;"></i></h1>
+                <h1 class="clearmargin clearpadding">Book Search</h1>
+                <p>Find books you want to read and click on the title to add them to your List</p>
+            </div>
+        </div>
+        
+        <div class="container books">
+        <div class="form-group">
+            <input type="text" id="search" placeholder="Search books . . ." autocomplete="off" class="form-control" />
+        </div>
+       <div class="buttons-search">
+       
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchResults" id="submit-btn">Search</button> <button type="button" class="btn btn-default" id="clear-all"><i class="fa fa-trash"></i> Clear All</button> 
+    </div></div>
+    <div class="row books">
+        <div class="col-md-3 col-sm-3 col-lg-3 col-xl-3 booklist">
+            <h1 class="books">My Book List</h1>
+            <ul class="list-group">
+                <li class="list-group-item"><span>Pride and Prejudice</span></li>
+                <li class="list-group-item"><span>The Alchemist</span></li>
+                <li class="list-group-item"><span>Catcher in the Rye</span></li>
+            </ul>
+        </div>
+        <div class="col-md-9 col-sm-9">
+            <h1 class="books">Results </h1></div>
+    </div>
+
+{{!-- <h1>My Book List</h1>
     <div class="container">
         <div class="form-group">
             <input type="text" id="search" placeholder="Search books . . ." autocomplete="off" class="form-control" />
         </div>
        
         <button type="button" class="btn btn-default" id="clear-all"><i class="fa fa-trash"></i> Clear Results</button> 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchResults" id="submit-btn">Search</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchResults" id="submit-btn">Search</button> --}}
        {{!-- <form class="main-search">
            <div class="form-group">
                <input type="text" id="search" placeholder="Type something. . ." autocomplete="off" class="form-control" />
@@ -17,6 +48,7 @@
            <div id="content"> Title: </div>
            <div id="authors" > Authors: </div>
        </form> --}}
+   </div>
    </div>
    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>

@@ -53,7 +53,7 @@
 }
 
 #why {
-  background-color:#000000;
+  background-color:#d2bc92;
   padding:30px;
   border-radius:15px;
   opacity:.9;
@@ -67,6 +67,9 @@ h2, .h2 {
 .jumbotron h1, .jumbotron h2, .jumbotron h3, .jumbotron h4, .jumbotron h5, .jumbotron h6 {
   color:#2b2b28;
   font-weight:bolder;
+}
+.books-container {
+  background-color: white;
 }
 
 .jumbotron p {
@@ -210,6 +213,19 @@ justify-content: space-around;
 .hidden {
   display: none;
 }
+.books p  {
+  margin:10px 0 10px;
+  font-size:16px;
+}
+
+.books .h1, h1 {
+  font-size:27px;
+  text-align:center;
+}
+.clearmargin clearpadding {
+  font-size: 27px;
+  text-align: center;
+}
 
 body {
   display:flex;
@@ -340,5 +356,48 @@ div.social-links {
   margin-right:5px;
   margin-bottom:5px;
 }
+/*Books API*/
+h1.clearmargin.clearpadding{
+  color: black;
+}
+.books {
+  color: black;
+}
+.list-group-item{
+  background-color: white;
+}
+.input-group .form-control:first-child{
+  background-color: white;
+  border-right: 1px solid #b6c3cd;
+  border-left: 1px solid #b6c3cd;
+  border-radius: 2px;
+}
+div.input-group{
+  display: inline-block;
+}
+.col-md-3 .booklist {
+  position: relative;
+  overflow: auto;
+}
+.container .books{
+  padding-top: 20px;
+  padding-bottom: 60px;
 
-
+}
+.buttons-search {
+  max-width: 500px;
+  margin: 0 auto;
+}
+#search.form-control{
+  max-width: 500px;
+  margin: 0 auto;
+}
+/*Contact form*/
+.form-contact{
+  max-width: 800px;
+}
+#rose{
+  float: left;
+  padding-bottom: 5px;
+  padding-right: 5px;
+}
