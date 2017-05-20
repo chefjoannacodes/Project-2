@@ -82,19 +82,19 @@ function googleBooks(inputName) {
                 bookPreview = response.items[i].volumeInfo.previewLink;
 
 
-                var outerDiv = $("<div class='outerDiv' style='background-color:red' id=container" + i + ">");
-                var titleDiv = $("<div class='titleDiv' style='background-color:blue' id=title" + i + ">");
+                var outerDiv = $("<div class='outerDiv' style='background-color:none' id=container" + i + ">");
+                var titleDiv = $("<div class='titleDiv' style='background-color:none' style='bold' id=title" + i + ">");
                 var authorDiv = $("<div class='authorDiv' style='background-color:black' id=author" + i + ">");
                 var snippetDiv = $("<div class='snippetDiv' style='background-color:orange' id=snippet" + i + ">");
                  var imageDiv = $("<div class='imageDiv'" + i + ">");
                 // $("body").append(outerDiv);
                 $(".results").append(outerDiv);
                 $(outerDiv).append([titleDiv, imageDiv, snippetDiv, bookPreview]);
-                $(titleDiv).append(newTitle + "\n" + "\n" + '<br/>' + author );
+                $(titleDiv).append(newTitle + "\n" + "\n" + '<br/>' + '<br/>' + "By: " + author );
                 // $(authorDiv).append(author);
 
                 $(imageDiv).append(bookPhoto)
-                $(snippetDiv).append(textSnippet);
+                // $(snippetDiv).append(textSnippet);
 
                 // var imgURL = response.Poster;
 
@@ -128,6 +128,10 @@ googleBooks(inputName);
 $("#clear-all").on("click", function() {
   item = 0;
   $(".results").empty();
+});
+
+$(titleDiv).click(function(){
+  console.log("title was clicked!!!!");
 });
 
 }); //document ready close

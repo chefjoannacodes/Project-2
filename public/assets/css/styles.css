@@ -72,6 +72,7 @@ h2, .h2 {
   background-color: white;
 }
 
+
 .jumbotron p {
   color:#444f51;
 }
@@ -359,6 +360,7 @@ div.social-links {
 /*Books API*/
 h1.clearmargin.clearpadding{
   color: black;
+  font-weight: bold;
 }
 .books {
   color: black;
@@ -377,9 +379,11 @@ h1.clearmargin.clearpadding{
 div.input-group{
   display: inline-block;
 }
-.col-md-3 .booklist {
+.col-md-3.booklist {
   position: relative;
   overflow: auto;
+  border-radius: 5px;
+  background-color: white;
 }
 .container .books{
   padding-top: 20px;
@@ -394,6 +398,89 @@ div.input-group{
   max-width: 500px;
   margin: 0 auto;
 }
+.container .books{
+  background-color: white;
+}
+div.panel-body{
+  background-color: white;
+}
+.panel-default>.panel-heading{
+  background-color: #e6e6e6;
+  color: black;
+  font-weight: bold;
+  font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+}
+div.panel-heading{
+  background-color: none;
+  color: white;
+}
+div#title0.titleDiv{
+  background-color: #eee;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+div#title1.titleDiv{
+   background-color: #eee;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+div#title2.titleDiv{
+   background-color: #eee;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+div#title3.titleDiv{
+   background-color: #eee;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+div#title4.titleDiv{
+   background-color: #eee;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+div#title5.titleDiv{
+   background-color: #eee;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+div#title6.titleDiv{
+   background-color: #eee;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+div#title7.titleDiv{
+   background-color: #eee;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+div#title8.titleDiv{
+   background-color: #eee;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+div#title9.titleDiv{
+   background-color: #eee;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+div.imageDiv{
+  text-align: center;
+  color: blue;
+  
+}
+
 /*Contact form*/
 .form-contact{
   max-width: 800px;
