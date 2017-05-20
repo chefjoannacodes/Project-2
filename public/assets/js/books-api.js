@@ -2,7 +2,15 @@ console.log("we are connected");
 $(document).ready(function() {
 //     $(".results").hide();
          // .blur();
-
+$(".form-group").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#submit-btn").click();
+         $(".results").show();
+    inputName = $("#search").val().trim();
+    // console.log("The input name", inputName);
+    googleBooks(inputName);
+    }
+});
 
 //to clear the google results
 // $(".results").each(function() {
@@ -20,11 +28,13 @@ $("#search").val("");
 $("#submit-btn").on("click", function(event) {
     event.preventDefault();
     $(".results").show();
+    
 
 
     
     inputName = $("#search").val().trim();
     // console.log("The input name", inputName);
+    
     googleBooks(inputName);
 });
 
@@ -61,7 +71,8 @@ function googleBooks(inputName) {
             var author;
             var link;
             var imgURL;
-            
+
+
 
             for (var i = 0; i < response.items.length; i++) {
                 item = response.items[i];
@@ -82,19 +93,22 @@ function googleBooks(inputName) {
                 bookPreview = response.items[i].volumeInfo.previewLink;
 
 
-                var outerDiv = $("<div class='outerDiv' style='background-color:none' id=container" + i + ">");
-                var titleDiv = $("<div class='titleDiv' style='background-color:none' style='bold' id=title" + i + ">");
+                var outerDiv = $("<div class='outerDiv text-center' style='background-color:none' id=container" + i + ">");
+                var titleDiv = $("<a class='titleDiv' style='background-color:#eee' style='bold' id=title" + i + ">");
                 var authorDiv = $("<div class='authorDiv' style='background-color:black' id=author" + i + ">");
-                var snippetDiv = $("<div class='snippetDiv' style='background-color:orange' id=snippet" + i + ">");
+                var snippetDiv = $("<a class='snippetDiv' style='background-color:none' id=snippet" + i + ">");
                  var imageDiv = $("<div class='imageDiv'" + i + ">");
                 // $("body").append(outerDiv);
                 $(".results").append(outerDiv);
-                $(outerDiv).append([titleDiv, imageDiv, snippetDiv, bookPreview]);
+                $(outerDiv).append([titleDiv, imageDiv, snippetDiv]);
                 $(titleDiv).append(newTitle + "\n" + "\n" + '<br/>' + '<br/>' + "By: " + author );
                 // $(authorDiv).append(author);
 
-                $(imageDiv).append(bookPhoto)
-                // $(snippetDiv).append(textSnippet);
+                // $(imageDiv).append(bookPhoto)
+                titleDiv.attr("data-book", newTitle);
+                $(snippetDiv).attr("href", bookTitle);
+                $(snippetDiv).attr("target", "_blank");
+                $(snippetDiv).html(bookPreview);
 
                 // var imgURL = response.Poster;
 
@@ -105,7 +119,17 @@ function googleBooks(inputName) {
           // Appending the image
           imageDiv.append(image);
 
+$(titleDiv).click(function(){
+//get book title
+var bookTitle = $(this).attr("data-book");
+// append book title to list
+var link = $("<li>");
+link.attr("class", "list-group-item");
+link.html(bookTitle);
+$(".list-group").prepend(link);
 
+
+});
           //      $("#content")
           // .append(
           //   "<h3 class='title'><span class='label label-primary'>" +
@@ -125,13 +149,17 @@ function googleBooks(inputName) {
 
 googleBooks(inputName);
 
+
+// function clear(){
+//   $("#search").val("");
+// };
+
 $("#clear-all").on("click", function() {
   item = 0;
   $(".results").empty();
+  
 });
 
-$(titleDiv).click(function(){
-  console.log("title was clicked!!!!");
-});
+
 
 }); //document ready close
